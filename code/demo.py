@@ -59,7 +59,7 @@ class TagPredictionUI(QWidget):
             self.tag_mapping = json.load(f)
         
         self.model.fc = torch.nn.Linear(num_ftrs, len(self.tag_mapping))
-        self.model.load_state_dict(torch.load('best_model.pth', map_location=torch.device('cpu')))
+        self.model.load_state_dict(torch.load(r'training_run_20241103_150608\best_model.pth', map_location=torch.device('cpu')))
         self.model.eval()
 
         # Define image transformation
